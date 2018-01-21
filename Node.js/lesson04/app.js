@@ -41,7 +41,7 @@ superagent.get(cnodeUrl) //调用superagent的get方法请求cnodeUrl
     //令ep重复监听 "topic_html" 事件 topicUrls.length次
     //after方法适合重复的操作，比如读取10个文件，调用5次数据库等。将回调函数handler注册到N次相同事件的触发上。达到指定的触发数，handler将会被调用执行，每次触发的数据，将会按触发顺序，存为数组作为参数传入。
     ep.after("topic_html", topicUrls.length, function (topics) {
-        //参数topics的值为：[[topicUrl, res.text],[topicUrl, res.text],[topicUrl, res.text],[...],...]
+        //参数topics的值 由触发"topic_html"事件时，依次添加进， topics = [[topicUrl, res.text],[topicUrl, res.text],[topicUrl, res.text],[...],...]
         topics = topics.map(function (topicPair) {//.map()方法遍历元素 jQuery
 
             var topicUrl = topicPair[0];
