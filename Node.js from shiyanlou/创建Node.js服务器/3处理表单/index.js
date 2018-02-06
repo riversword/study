@@ -8,4 +8,6 @@ handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
 
+handle["/show"] = requestHandlers.show;
+
 server.start( router.route, handle ); //注意是取模块中的方法，执行
