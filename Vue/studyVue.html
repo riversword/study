@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<div id="app">
+    {{ message }}
+</div>
+
+<div id="app-2">
+    <span v-bind:title="message">鼠标悬停提示信息</span>
+</div>
+
+<div id="app-3">
+    <p v-if="seen">可以看见</p>
+</div>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text}}
+        </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <p> {{ message }} </p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+
+<!--创建一个todo-item组件实例-->
+<!-- <ol>
+    <todo-item></todo-item>
+</ol> -->
+<!---->
+
+<div id="app-7">
+    <ol>
+        <todo-item 
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id" >
+        </todo-item>
+    </ol>
+</div>
+
+<div id="app">
+    <app-nav></app-nav>
+    <app-view>
+        <app-sidebar></app-sidebar>
+        <app-content></app-content>
+    </app-view>
+</div>
+
+<div id="example">
+    <p>Original message:"{{ message }}"</p>
+    <p>Computed reversed message:"{{ reverseMessage }}"</p>
+    <!-- <p>Computed reversed message:"{{ reverseMessage() }}"</p> 报错 reverseMessage is not a function -->
+    <p>reversed message:"{{ reverseMessage2() }}"</p>
+
+    <p>Computed now:"{{ now }}"</p>
+    <p>Computed now2:"{{ now2() }}"</p>
+</div>
+
+<div id="demo">
+    <p>fullName: {{ fullName }}</p>
+    <p>fullName: {{ fullName }}</p>
+</div>
+
+<div id="demo2">
+    <p>firstName: {{ firstName }}</p>
+    <p>lastName: {{ lastName }}</p>
+    <p>fullName: {{ fullName }}</p>
+</div>
+
+
+<!-- <script src="https://unpkg.com/vue"></script> -->
+<script src="js/vue.js"></script>
+<script src="js/studyVue.js"></script>
+</html>
